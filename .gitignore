@@ -1,0 +1,4 @@
+.venv/
+Credit_card.csv Credit_card_label.csv
+Credit_model.pkl Credit_model_label.pkl data.pkl scaler.pkl
+Notebook.ipynb

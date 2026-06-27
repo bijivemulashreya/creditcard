@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Approval Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Credit Card Approval Prediction</h2>
+        <form action="/predict" method="post">
+            <label>Car Owner:</label>
+            <select name="Car_Owner">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <label>Property Owner:</label>
+            <select name="Propert_Owner">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <label>Annual Income:</label>
+            <input type="number" name="Annual_income" step="0.01" required><br><br>
+
+            <label>Education Level:</label>
+            <select name="EDUCATION">
+                <option value="Lower secondary">Lower Secondary</option>
+                <option value="Secondary / secondary special">Secondary</option>
+                <option value="Higher education">Higher Education</option>
+                <option value="Incomplete higher">Incomplete Higher</option>
+                <option value="Academic degree">Academic Degree</option>
+            </select><br><br>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction %}
+            <h3>Prediction: {{ prediction }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
